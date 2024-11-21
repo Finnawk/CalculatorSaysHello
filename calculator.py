@@ -1,7 +1,7 @@
 # Import tkinter
 
 import tkinter as tk
-
+import SaysHello
 # Set the calculation to an empty string
 calculation = ""
 
@@ -36,6 +36,10 @@ root.geometry("300x275")
 root.title("Calculator Says Hello")
 text_result = tk.Text(root, height=2, width=16, font=("Arial", 24))
 text_result.grid(columnspan=5)
+
+if text_result == "07734":
+    file_open = SaysHello
+   # print(file_open)
 
 # Add all buttons needed for the calculator
 btn1 =tk.Button(root, text="1", command=lambda: add_to_calculation(1), width=5, font=("Arial", 14))
