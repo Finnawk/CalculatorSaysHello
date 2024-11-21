@@ -1,13 +1,18 @@
+# Import tkinter
+
 import tkinter as tk
 
+# Set the calculation to an empty string
 calculation = ""
+
+# Create function to add calculation
 def add_to_calculation(symbol):
     global calculation
     calculation += str(symbol)
     text_result.delete(1.0, "end")
     text_result.insert(1.0, calculation)
 
-
+# Create function evaluate the calculation
 def evaluate_calcualtion():
     global calculation
     try:
@@ -18,19 +23,21 @@ def evaluate_calcualtion():
         clear_field()
         text_result.insert(1.0, "error")
 
+# Create function to clear the textbox field
 def clear_field():
     global calculation
     calculation = ""
     text_result.delete(1.0, "end")
 
 
-
+# Create the application page
 root = tk.Tk()
 root.geometry("300x275")
 root.title("Calculator Says Hello")
 text_result = tk.Text(root, height=2, width=16, font=("Arial", 24))
 text_result.grid(columnspan=5)
 
+# Add all buttons needed for the calculator
 btn1 =tk.Button(root, text="1", command=lambda: add_to_calculation(1), width=5, font=("Arial", 14))
 btn1.grid(row=2, column=1)
 btn2 =tk.Button(root, text="2", command=lambda: add_to_calculation(2), width=5, font=("Arial", 14))
