@@ -2,5 +2,5 @@
 # a separate page that pops up that says
 # hello to the user
 
-
-print("Hello User!")
+def DesplayText():
+    print("Hello User!")
