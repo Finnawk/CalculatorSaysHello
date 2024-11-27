@@ -1,10 +1,10 @@
 # Import tkinter
 
 import tkinter as tk
-import SaysHello
+#import SaysHello as sh
 # Set the calculation to an empty string
 calculation = ""
-
+#str_num = "07734"
 # Create function to add calculation
 def add_to_calculation(symbol):
     global calculation
@@ -37,9 +37,8 @@ root.title("Calculator Says Hello")
 text_result = tk.Text(root, height=2, width=16, font=("Arial", 24))
 text_result.grid(columnspan=5)
 
-if text_result == "07734":
-    file_open = SaysHello
-   # print(file_open)
+if text_result == int("07734"):
+    import SaysHello
 
 # Add all buttons needed for the calculator
 btn1 =tk.Button(root, text="1", command=lambda: add_to_calculation(1), width=5, font=("Arial", 14))
