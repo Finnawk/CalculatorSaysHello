@@ -1,7 +1,7 @@
 # Import tkinter
 
 import tkinter as tk
-#import SaysHello as sh
+import SaysHello as sh
 # Set the calculation to an empty string
 calculation = ""
 #str_num = "07734"
@@ -17,6 +17,8 @@ def evaluate_calcualtion():
     global calculation
     try:
         calculation = str(eval((calculation)))
+        if calculation == "0.7734":
+            sh.DisplayMessage()
         text_result.delete(1.0, "end")
         text_result.insert(1.0, calculation)
     except:
