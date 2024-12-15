@@ -1,10 +1,10 @@
 # Import tkinter
 
 import tkinter as tk
-import SaysHello as sh
+#import SaysHello as sh
 # Set the calculation to an empty string
 calculation = ""
-
+#str_num = "07734"
 # Create function to add calculation
 def add_to_calculation(symbol):
     global calculation
@@ -12,17 +12,13 @@ def add_to_calculation(symbol):
     text_result.delete(1.0, "end")
     text_result.insert(1.0, calculation)
 
-
 # Create function evaluate the calculation
 def evaluate_calcualtion():
     global calculation
     try:
         calculation = str(eval((calculation)))
-        if calculation == "0.7734":
-            sh.DesplayText()
         text_result.delete(1.0, "end")
         text_result.insert(1.0, calculation)
-
     except:
         clear_field()
         text_result.insert(1.0, "error")
@@ -41,7 +37,8 @@ root.title("Calculator Says Hello")
 text_result = tk.Text(root, height=2, width=16, font=("Arial", 24))
 text_result.grid(columnspan=5)
 
-
+if text_result == int("07734"):
+    import SaysHello
 
 # Add all buttons needed for the calculator
 btn1 =tk.Button(root, text="1", command=lambda: add_to_calculation(1), width=5, font=("Arial", 14))
@@ -82,7 +79,6 @@ btn_close =tk.Button(root, text=")", command=lambda: add_to_calculation(")"), wi
 btn_close.grid(row=5, column=1)
 btn_clear =tk.Button(root, text="C", command=clear_field, width=5, font=("Arial", 14))
 btn_clear.grid(row=6, column=3)
-
 root.mainloop()
 
 

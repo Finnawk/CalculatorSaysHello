@@ -4,6 +4,6 @@
 
 import tkinter as tk
 from tkinter import messagebox
-def DesplayText():
-    messagebox.showinfo("Calculator Says Hello","Hello User! Thank you for "
-                        "using me today!")
+
+messagebox.showinfo("Calculator Says Hello", "Hello User!")
+
