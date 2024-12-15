@@ -1,7 +1,7 @@
 # Import tkinter
 
 import tkinter as tk
-from SaysHello import *
+import SaysHello as sh
 # Set the calculation to an empty string
 calculation = ""
 
@@ -11,16 +11,18 @@ def add_to_calculation(symbol):
     calculation += str(symbol)
     text_result.delete(1.0, "end")
     text_result.insert(1.0, calculation)
-    if text_result == "07734":
-        DesplayText()
+
 
 # Create function evaluate the calculation
 def evaluate_calcualtion():
     global calculation
     try:
         calculation = str(eval((calculation)))
+        if calculation == "0.7734":
+            sh.DesplayText()
         text_result.delete(1.0, "end")
         text_result.insert(1.0, calculation)
+
     except:
         clear_field()
         text_result.insert(1.0, "error")
